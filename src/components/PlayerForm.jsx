@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { useNewPlayerMutation } from "../app/api";
 import { useNavigate } from "react-router-dom";
+import "../App.css";
 
 export default function PlayerForm() {
   const [form, setForm] = useState({
@@ -21,17 +22,55 @@ export default function PlayerForm() {
     navigate("/");
   };
   return (
-    <div>
+    <div className="form">
+      <h1 className="display-4">Add a New Player</h1>
       <form onSubmit={submitForm}>
-        <label>Name</label>
-        <input type="text" name="name" onChange={formChange} />
-        <label>Breed</label>
-        <input type="text" name="breed" onChange={formChange} />
-        <label>Image</label>
-        <input type="text" name="imageUrl" onChange={formChange} />
-        <label>Team ID</label>
-        <input type="text" name="teamId" onChange={formChange} />
-        <button>Submit</button>
+        <div className="form-group mb-3">
+          <input
+            type="text"
+            className="form-control"
+            name="name"
+            placeholder="Name"
+            onChange={formChange}
+          />
+        </div>
+        <div className="form-group mb-3">
+          <input
+            type="text"
+            className="form-control"
+            name="breed"
+            placeholder="Breed"
+            onChange={formChange}
+          />
+        </div>
+        <div className="form-group mb-3">
+          <input
+            type="text"
+            className="form-control"
+            name="imageUrl"
+            placeholder="Image"
+            onChange={formChange}
+          />
+        </div>
+        <div className="form-group mb-3">
+          <input
+            type="number"
+            className="form-control"
+            name="teamId"
+            placeholder="Team ID"
+            onChange={formChange}
+          />
+        </div>
+        <button type="submit" className="btn btn-primary">
+          Submit
+        </button>{" "}
+        <button
+          type="submit"
+          className="btn btn-secondary"
+          onClick={() => navigate("/")}
+        >
+          Cancel
+        </button>
       </form>
     </div>
   );
