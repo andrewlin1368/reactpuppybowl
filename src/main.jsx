@@ -22,6 +22,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
             path="/players/new"
             element={<PlayerForm></PlayerForm>}
           ></Route>
+          <Route path="*" element={<App></App>}></Route>
         </Routes>
       </Provider>
     </BrowserRouter>
