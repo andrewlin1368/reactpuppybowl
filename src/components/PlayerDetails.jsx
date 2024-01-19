@@ -21,7 +21,7 @@ export default function PlayerDetails() {
   const deletePlayerButton = async (e) => {
     dispatch(setPlayer(data[0]));
     await deletePlayer(e.target.name);
-    navigate("/players");
+    navigate("/");
   };
   return data[0] ? (
     <div>
@@ -32,7 +32,7 @@ export default function PlayerDetails() {
       </div>
       <button
         onClick={() => {
-          navigate("/players");
+          navigate("/");
         }}
       >
         Go To List

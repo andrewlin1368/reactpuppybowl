@@ -13,7 +13,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <BrowserRouter>
       <Provider store={store}>
         <Routes>
-          <Route path="/players" element={<App></App>}></Route>
+          <Route path="/" element={<App></App>}></Route>
           <Route
             path="/players/:id"
             element={<PlayerDetails></PlayerDetails>}

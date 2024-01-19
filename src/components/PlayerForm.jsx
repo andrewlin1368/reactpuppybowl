@@ -18,7 +18,7 @@ export default function PlayerForm() {
   const submitForm = async (e) => {
     e.preventDefault();
     await addPlayer(form);
-    navigate("/players");
+    navigate("/");
   };
   return (
     <div>
